@@ -10,8 +10,11 @@ The user/group must have the minimum policy:
 --------------------------------------------
 
 allow group myHAgroup to use private-ips in compartment myCompartment
+
 allow group myHAgroup to use public-ips in compartment myCompartment
+
 allow group myHAgroup to use vnics in compartment myCompartment
+
 
 ------------------------------------------------------------------------------------------------
 Another important note is clock skew. Within OCI requests must be within 5min.
