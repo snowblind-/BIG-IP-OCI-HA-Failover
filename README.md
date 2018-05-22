@@ -1,7 +1,9 @@
 # BIG-IP-OCI-HA-Failover
 Scripts to use for HA failover
 
-Need to create a unique user for failover similar to a system account. I do not recommend using your existing credentials. This is also useful for auditing and tracking failover events vs. user configuration changes. The user will also need to have a public/private key pair. Directions for creating one for use with OCI can be found here:
+Should be put in /config/failover
+
+You need to create a unique user for failover similar to a system account. I do not recommend using your existing credentials. This is also useful for auditing and tracking failover events vs. user configuration changes. The user will also need to have a public/private key pair. Directions for creating one for use with OCI can be found here:
 
 https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#How
 
