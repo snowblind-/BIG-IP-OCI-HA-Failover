@@ -19,7 +19,7 @@ allow group myHAgroup to use vnics in compartment myCompartment
 ------------------------------------------------------------------------------------------------
 Another important note is clock skew. Within OCI requests must be within 5min.
 
-Deploying the BIG-IP should always include an ntp configuration and the OCI network provides an ntp server at the 169.254.169.254 IP address. Additionally you could use pool.ntp.org. But the locally provided IP is recommended and will likely be closely in sync with the API infrastructure.
+Deploying the BIG-IP should always include an ntp configuration especially for HA, and the OCI network provides an ntp server at the 169.254.169.254 IP address. Additionally you could use pool.ntp.org. But the locally provided IP is recommended and will likely be closely in sync with the API infrastructure and local.
 
 ------------------------------------------------------------------------------------------------
 
