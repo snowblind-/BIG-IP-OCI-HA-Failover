@@ -17,7 +17,7 @@ To deploy BIG-IP VE manually in to OCI:
 Step 1: Download a BIG-IP VE image
 ----------------------------------
 
-The first step is to get a BIG-IP VE image (a .vhd file) onto a local drive. You will upload this image to Oracle storage.
+The first step is to get a BIG-IP VE image (a .qcow2.zip file) onto a local drive. You will upload this image to Oracle storage.
 
 1. In a browser, open the F5 Downloads page at https://downloads.f5.com and register or log in.
 
@@ -183,16 +183,18 @@ Once the object is created on the BIG-IP, you can now customize the scripts whic
 
 9. Download the following files from https://github.com/snowblind-/BIG-IP-OCI-HA-Failover
 
+.. code-block:: console
+
     active
     oci-curl
     vnicext2.json
     vnicint2.json
 
-    And copy them to the `/config/failover` directory on both BIG-IP devices on which you previously set up a cluster.
+10. Copy them to the `/config/failover` directory on both BIG-IP devices on which you previously set up a cluster.
 
-10. In our `Virtual Server` example, we are going to configure it to be attached to our `ext2` VNIC.
+11. In our `Virtual Server` example, we are going to configure it to be attached to our `ext2` VNIC.
 
-11. In the file `vnicext2`, replace the section with the example `ocid` with your own.
+12. In the file `vnicext2`, replace the section with the example `ocid` with your own.
 
 .. code-block:: json
 
@@ -200,15 +202,15 @@ Once the object is created on the BIG-IP, you can now customize the scripts whic
       "vnicId" : "ocid1.vnic.oc1.phx.abyhREPLACETHISWITHYOUROCIDShs5mzua7a"
     }
 
-12. In the file `active`, replace the `iaas.us-phoenix-1.oraclecloud.com` with the appropriate OCI API endpoint for the `Region` you are deployed in.
+13. In the file `active`, replace the `iaas.us-phoenix-1.oraclecloud.com` with the appropriate OCI API endpoint for the `Region` you are deployed in.
 
     Replace the `ocid` with the `Private IP ocid` copied when you created the Private IP Address earlier. You can delete the second command as it is not necessary in this example.
 
-13. In the file `oci-curl`, replace the `tenancyID`, `authUserId`, `keyFingerprint`, and `privateKeyPath` with your values.
+14. In the file `oci-curl`, replace the `tenancyID`, `authUserId`, `keyFingerprint`, and `privateKeyPath` with your values.
 
-14. Ensure the `oci-curl` and `active` files are set to the `execute` (+x) permissions.
+15. Ensure the `oci-curl` and `active` files are set to the `execute` (+x) permissions.
 
-15. Test the failover. On the `Active` BIG-IP in the cluster, run the following command.
+16. Test the failover. On the `Active` BIG-IP in the cluster, run the following command.
 
 .. code-block:: console
 
