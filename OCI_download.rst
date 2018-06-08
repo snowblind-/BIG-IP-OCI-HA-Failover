@@ -141,7 +141,7 @@ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeovervi
 
 11. If you want to directly access the BIG-IP from the Internet, you can check the :guilabel:`ASSIGN PUBLIC IP ADDRESS`.
 
-12. You will need to modify any Security Lists to allow TCP ports `80` and `443` inbound and specify which IP addresses are allowed to communicate with the management interface.
+12. You will need to modify any Security Lists to allow TCP ports `22` and `443` inbound (Single-NIC mode requires `8443` for webui) and specify which IP addresses are allowed to communicate with the management interface.
 
 
 .. _Oracle_download_step_4:
